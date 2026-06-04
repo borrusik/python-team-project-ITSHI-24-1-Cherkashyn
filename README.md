@@ -1,0 +1,1 @@
+# python-team-project-ITSHI-24-1-Cherkashyn

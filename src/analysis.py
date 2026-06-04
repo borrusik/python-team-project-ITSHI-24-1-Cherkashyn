@@ -5,6 +5,9 @@ def build_rating(results):
 
 def calculate_success_rate(results):
     """Calculate percentage of students who passed the test."""
+    if not results:
+        return 0
+
     passed_students = 0
 
     for name, score in results:
@@ -16,6 +19,9 @@ def calculate_success_rate(results):
 
 def calculate_average_score(results):
     """Calculate average test score."""
+    if not results:
+        return 0
+
     total = 0
 
     for name, score in results:

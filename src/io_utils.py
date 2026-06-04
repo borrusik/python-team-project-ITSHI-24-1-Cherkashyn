@@ -2,14 +2,17 @@ def read_test_results(file_path):
     """Read student test results from a file."""
     results = []
 
-    with open(file_path, "r", encoding="utf-8") as file:
-        for line in file:
-            parts = line.strip().split()
+    try:
+        with open(file_path, "r", encoding="utf-8") as file:
+            for line in file:
+                parts = line.strip().split()
 
-            if len(parts) == 2:
-                name = parts[0]
-                score = int(parts[1])
-                results.append((name, score))
+                if len(parts) == 2:
+                    name = parts[0]
+                    score = int(parts[1])
+                    results.append((name, score))
+    except FileNotFoundError:
+        print("Input file was not found.")
 
     return results
 
